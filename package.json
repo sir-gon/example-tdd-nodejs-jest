@@ -1,0 +1,35 @@
+{
+  "name": "example-tdd-nodejs-jest",
+  "version": "0.0.1",
+  "description": "Test-Driven Development example using NodeJS and Jest",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "debug": "node --inspect=0.0.0.0:9229 index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sir-gon/example-tdd-nodejs-jest.git"
+  },
+  "keywords": [
+    "tdd",
+    "jest",
+    "nodejs",
+    "unit",
+    "test"
+  ],
+  "author": "Gonzalo Diaz <gonzalo@gon.cl>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sir-gon/example-tdd-nodejs-jest/issues"
+  },
+  "homepage": "https://github.com/sir-gon/example-tdd-nodejs-jest#readme",
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {
+    "jest": "^26.1.0",
+    "jest-esm-transformer": "^1.0.0"
+  }
+}
