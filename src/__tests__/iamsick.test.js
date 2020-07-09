@@ -32,8 +32,8 @@ describe('I am sick', () => {
         );
 
         expect((typeof response).toLowerCase()).toBe('number');
-        expect(response).toBeGreaterThanOrEqual(0.3);
-        expect(response).toBeLessThanOrEqual(0.35);
+        expect(response).toBeGreaterThanOrEqual(0.22);
+        expect(response).toBeLessThanOrEqual(0.24);
 
     });
 
@@ -53,8 +53,28 @@ describe('I am sick', () => {
         );
 
         expect((typeof response).toLowerCase()).toBe('number');
-        expect(response).toBeGreaterThanOrEqual(0.9);
-        expect(response).toBeLessThanOrEqual(1);
+        expect(response).toBeGreaterThanOrEqual(0.69);
+        expect(response).toBeLessThanOrEqual(0.71);
+    });
+
+    it('I have one mandatory symptom and some optional sympthoms', () => {
+        expect.assertions(3);
+
+        const mySymtoms =  [
+            "fever",
+            "ageusia",
+            "anosmia"
+        ];
+
+        const response = sick.iAmSick(
+            covid19TestCase.mandatory,
+            covid19TestCase.optionals,
+            mySymtoms
+        );
+
+        expect((typeof response).toLowerCase()).toBe('number');
+        expect(response).toBeGreaterThanOrEqual(0.3);
+        expect(response).toBeLessThanOrEqual(0.4);
     });
 
     it('I don\'t have a symptom', () => {
