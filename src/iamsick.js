@@ -24,7 +24,7 @@ export const iAmSick = ( mandatorySymptoms, optionaSymptoms, mySymptoms ) => {
 
   }
 
-  if(compatibleMandatorySymptoms > 0) {
+  if(compatibleMandatorySymptoms === mandatorySymptoms.length) {
     return true;
   }
 
