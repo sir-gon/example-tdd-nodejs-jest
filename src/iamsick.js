@@ -28,8 +28,24 @@ export const iAmSick = ( mandatorySymptoms, optionaSymptoms, mySymptoms ) => {
 
   console.log('Mandatory Symptoms probability', probabilityMandatorySymptoms);
 
+  // Check if my symptoms are compatible with illness OPTIONAL symptoms
+  let compatibleOptionalSymptoms = 0;
+
+  for (let symptom of mySymptoms) {
+    console.log(symptom);
+
+    if(optionaSymptoms.includes( symptom )) {
+      compatibleOptionalSymptoms += 1;
+    }
+  }
+
+  let probabilityOptionalSymptoms = 
+  (compatibleOptionalSymptoms / optionaSymptoms.length);
+
+  console.log('Optional Symptoms probability', probabilityOptionalSymptoms);
+
   // Return final probability
-  return probabilityMandatorySymptoms;
+  return (probabilityMandatorySymptoms * 0.7) + (probabilityOptionalSymptoms * 0.3);
 };
   
 export default {
