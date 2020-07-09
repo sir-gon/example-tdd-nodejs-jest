@@ -12,32 +12,27 @@ export const iAmSick = ( mandatorySymptoms, optionaSymptoms, mySymptoms ) => {
     throw new SickException("My symptoms is not fined");
   }
 
-  // Check if my symptoms are compatible with illness MANDATORY symptoms
   let compatibleMandatorySymptoms = 0;
-
+  let compatibleOptionalSymptoms = 0;
+  
   for (let symptom of mySymptoms) {
     console.log(symptom);
-
+    
+    // Check if my symptoms are compatible with illness MANDATORY symptoms
     if(mandatorySymptoms.includes( symptom )) {
       compatibleMandatorySymptoms += 1;
     }
+    // Check if my symptoms are compatible with illness OPTIONAL symptoms
+    if(optionaSymptoms.includes( symptom )) {
+      compatibleOptionalSymptoms += 1;
+    }
+
   }
 
   let probabilityMandatorySymptoms = 
     (compatibleMandatorySymptoms / mandatorySymptoms.length);
 
   console.log('Mandatory Symptoms probability', probabilityMandatorySymptoms);
-
-  // Check if my symptoms are compatible with illness OPTIONAL symptoms
-  let compatibleOptionalSymptoms = 0;
-
-  for (let symptom of mySymptoms) {
-    console.log(symptom);
-
-    if(optionaSymptoms.includes( symptom )) {
-      compatibleOptionalSymptoms += 1;
-    }
-  }
 
   let probabilityOptionalSymptoms = 
   (compatibleOptionalSymptoms / optionaSymptoms.length);
