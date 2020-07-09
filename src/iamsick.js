@@ -12,9 +12,20 @@ export const iAmSick = ( mandatorySymptoms, optionaSymptoms, mySymptoms ) => {
     throw new SickException("My symptoms is not fined");
   }
 
-  if(mySymptoms.length > 0)
-  {
-    return true
+  // Check if my symptoms are compatible with illness symptoms
+  let compatibleMandatorySymptoms = 0;
+
+  for (let symptom of mySymptoms) {
+    console.log(symptom);
+
+    if(mandatorySymptoms.includes( symptom )) {
+      compatibleMandatorySymptoms += 1;
+    }
+
+  }
+
+  if(compatibleMandatorySymptoms > 0) {
+    return true;
   }
 
   return false;
