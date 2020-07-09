@@ -21,7 +21,7 @@ describe('I am sick', () => {
     });
 
     it('I have some symptoms', () => {
-        expect.assertions(2);
+        expect.assertions(3);
 
         const mySymtoms = ['fever'];
 
@@ -31,12 +31,14 @@ describe('I am sick', () => {
             mySymtoms
         );
 
-        expect((typeof response).toLowerCase()).toBe('boolean');
-        expect(response).toBe(false);
+        expect((typeof response).toLowerCase()).toBe('number');
+        expect(response).toBeGreaterThanOrEqual(0.3);
+        expect(response).toBeLessThanOrEqual(0.35);
+
     });
 
     it('I have all symptoms', () => {
-        expect.assertions(2);
+        expect.assertions(3);
 
         const mySymtoms =  [
             "fever",
@@ -50,8 +52,9 @@ describe('I am sick', () => {
             mySymtoms
         );
 
-        expect((typeof response).toLowerCase()).toBe('boolean');
-        expect(response).toBe(true);
+        expect((typeof response).toLowerCase()).toBe('number');
+        expect(response).toBeGreaterThanOrEqual(0.9);
+        expect(response).toBeLessThanOrEqual(1);
     });
 
     it('I don\'t have a symptom', () => {
@@ -65,8 +68,8 @@ describe('I am sick', () => {
             mySymtoms
         );
 
-        expect((typeof response).toLowerCase()).toBe('boolean');
-        expect(response).toBe(false);
+        expect((typeof response).toLowerCase()).toBe('number');
+        expect(response).toEqual(0);
 
     });
 
