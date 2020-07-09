@@ -1,5 +1,5 @@
-export const iAmSick = () => {
-    return true;
+export const iAmSick = ( iHaveSymptoms ) => {
+    return iHaveSymptoms;
   };
   
 export default {
