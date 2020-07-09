@@ -1,24 +1,21 @@
 // Libraries
+import { SickException } from '../iamsick.error';
 import * as sick from '../iamsick';
 
 describe('I am sick', () => {
-    it('I have symptom', () => {
-        expect.assertions(2);
+    it('Unexpected input', () => {
+        expect.assertions(1)
 
-        const response = sick.iAmSick(true);
+        const t = () => {
+            const response = sick.iAmSick(
+                null, // Mandatory illness symptoms 
+                null, // Optional illness Symptoms
+                null // My current symptoms
+            );
+        };
 
-        expect((typeof response).toLowerCase()).toBe('boolean');
-        expect(response).toBe(true);
-    });
+        expect(t).toThrow( SickException );
+    });    
 
-    it('I don\'t have a symptom', () => {
-        expect.assertions(2);
-
-        const response = sick.iAmSick(false);
-
-        expect((typeof response).toLowerCase()).toBe('boolean');
-        expect(response).toBe(false);
-
-    });
-  });
+});
   
