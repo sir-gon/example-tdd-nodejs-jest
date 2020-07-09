@@ -32,6 +32,25 @@ describe('I am sick', () => {
         );
 
         expect((typeof response).toLowerCase()).toBe('boolean');
+        expect(response).toBe(false);
+    });
+
+    it('I have all symptoms', () => {
+        expect.assertions(2);
+
+        const mySymtoms =  [
+            "fever",
+            "dry cough",
+            "muscle pain"
+        ];
+
+        const response = sick.iAmSick(
+            covid19TestCase.mandatory,
+            covid19TestCase.optionals,
+            mySymtoms
+        );
+
+        expect((typeof response).toLowerCase()).toBe('boolean');
         expect(response).toBe(true);
     });
 
