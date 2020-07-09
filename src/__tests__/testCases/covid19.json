@@ -1,0 +1,17 @@
+{
+    "mandatory": [
+        "fever",
+        "dry cough",
+        "muscle pain"
+    ],
+    "optionals":
+    [
+        "ageusia",
+        "anosmia",
+        "sore throat",
+        "diarrhea",
+        "conjunctivitis",
+        "headache",
+        "rashes"
+    ]
+}
