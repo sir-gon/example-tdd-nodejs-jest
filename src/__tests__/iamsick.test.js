@@ -3,7 +3,7 @@ import { SickException } from '../iamsick.error';
 import * as sick from '../iamsick';
 
 // Test Case data
-import * as covid19TestCase from './testCases/covid19.json';
+import covid19TestCase from './testCases/covid19.json';
 
 describe('I am sick', () => {
     it('Unexpected input', () => {
