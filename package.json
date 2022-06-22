@@ -4,10 +4,11 @@
   "description": "Test-Driven Development example using NodeJS and Jest",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "debug": "node --inspect=0.0.0.0:9229 index.js",
-    "test": "jest"
+    "start": "node --experimental-vm-modules index.js",
+    "debug": "node --experimental-vm-modules --inspect=0.0.0.0:9229 index.js",
+    "test": "node --experimental-vm-modules ./node_modules/.bin/jest --ci --color --detectOpenHandles --forceExit --runInBand --debug"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/sir-gon/example-tdd-nodejs-jest.git"
@@ -29,7 +30,6 @@
     "axios": "^0.27.2"
   },
   "devDependencies": {
-    "jest": "26.1.0",
-    "jest-esm-transformer": "1.0.0"
+    "jest": "28.1.1"
   }
 }
