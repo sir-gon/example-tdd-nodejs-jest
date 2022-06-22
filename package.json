@@ -29,7 +29,7 @@
     "axios": "^0.27.2"
   },
   "devDependencies": {
-    "jest": "26.1.0",
+    "jest": "28.1.1",
     "jest-esm-transformer": "1.0.0"
   }
 }
