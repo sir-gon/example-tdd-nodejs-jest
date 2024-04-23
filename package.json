@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node --experimental-vm-modules index.js",
     "debug": "node --experimental-vm-modules --inspect=0.0.0.0:9229 index.js",
-    "test": "node --experimental-vm-modules ./node_modules/.bin/jest --ci --color --detectOpenHandles --forceExit --runInBand --debug"
+    "test": "node --experimental-vm-modules ./node_modules/.bin/jest --ci --color --detectOpenHandles --forceExit --runInBand --debug",
+    "update-all": "npm install $(npm outdated | cut -d' ' -f 1 | sed '1d' | xargs -I '$' echo '$@latest' | xargs echo)"
   },
   "type": "module",
   "repository": {
@@ -27,9 +28,9 @@
   },
   "homepage": "https://github.com/sir-gon/example-tdd-nodejs-jest#readme",
   "dependencies": {
-    "axios": "^1.6.1"
+    "axios": "^1.6.8"
   },
   "devDependencies": {
-    "jest": "29.7.0"
+    "jest": "^29.7.0"
   }
 }
